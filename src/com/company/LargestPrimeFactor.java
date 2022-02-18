@@ -27,17 +27,18 @@ What is the largest prime factor of the number 600851475143 ?
         //+2 weil nur ungerade Zahlen Primzahlen sein können (abgesehen von der 2)
         //600851475143L kann nicht durch 2 teilbar sein, deswegen mit 3 starten
         long i = 3;
-        while(i <= TARGET/2){
+        while(i < TARGET/2){
             if(isPrime(i)){
                 if(current % i == 0){
                     System.out.println("Aktuelle Zahl " + current + " ist durch " + i + " teilbar");
                     current /= i;
                     System.out.println("Neue Zahl " + current);
                     primeFactorList.add(i);
+
+                    if(current == 1) break;
                     continue;
                 }
             }
-
             //i+2 weil nur ungerade Zahlen Primzahlen sein können
             i = i+2;
         }
@@ -51,7 +52,6 @@ What is the largest prime factor of the number 600851475143 ?
                 return false;
             }
         }
-
         return true;
     }
 }
