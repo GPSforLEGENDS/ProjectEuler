@@ -12,9 +12,10 @@ What is the smallest positive number that is evenly divisible by all of the numb
 
     public static void main(String[] args) {
         outer:
-        for(long i = MIN; true; i++){
+        for(long i = MIN; true; i += 20){
 
-            for(int div = 1; div <= 20; div++){
+            //no need to test with div = 20 if we increment by 20
+            for(int div = 1; div < 20; div++){
                 if(i % div != 0) continue outer;
             }
 
